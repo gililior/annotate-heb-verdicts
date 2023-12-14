@@ -7,11 +7,16 @@ HEB_VERDICTS_DESC = "In the following task you will be presented a verdict from 
 
 
 def generate_rep_map_to_column():
-    heb_verdicts_header = ["username", "filename", "file_length", "פרשת ראיות התביעה",
-                           "הדיון", "התנהגותה של המתלוננת במהלך האירוע",
-                           "העבירה של מעשה מגונה היסוד הנפשי", "סיכום", "גרסת הנאשם",
-                           "כתב האישום", "הכרעת דין", "גדר המחלוקת",
-                           "ה עדותה של או כ אם הקטין", "סוף דבר", "אישום שני"]
+    heb_verdicts_header = ["username", "filename", "file_length",
+                           "ראיות התביעה",
+                           "יסוד העבירה",
+                           "עדויות התביעה",
+                           "עדויות מטעם ההגנה",
+                           "סיכום",
+                           "עדות הנאשם",
+                           "כתב האישום",
+                           "הכרעת דין",
+                           "סוף דבר"]
 
     map_to_columns = {}
     for i, header in enumerate(heb_verdicts_header):
