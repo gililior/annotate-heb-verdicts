@@ -154,13 +154,13 @@ def main(csv_path):
         if valid:
             st.session_state.i += 1
             next_row_ind = len(st.session_state.ws.col_values(1)) + 1
-            st.session_state.ws.update('A' + str(next_row_ind), st.session_state.username)
-            st.session_state.ws.update('B' + str(next_row_ind), user_files[st.session_state.i - 1])
-            st.session_state.ws.update('C' + str(next_row_ind), st.session_state.len_file)
+            st.session_state.ws.update(range_name='A' + str(next_row_ind), values=st.session_state.username)
+            st.session_state.ws.update(range_name='B' + str(next_row_ind), values=user_files[st.session_state.i - 1])
+            st.session_state.ws.update(range_name='C' + str(next_row_ind), values=st.session_state.len_file)
             for representative in representative_map_to_column:
                 if st.session_state[f"{representative}_checkbox"]:
                     letter = representative_map_to_column[representative]
-                    st.session_state.ws.update(letter + str(next_row_ind), str(st.session_state[f"{representative}_range"]))
+                    st.session_state.ws.update(range_name=letter + str(next_row_ind), values=str(st.session_state[f"{representative}_range"]))
                 st.session_state.pop(f"{representative}_range")
                 st.session_state.pop(f"{representative}_checkbox")
     selected_file = user_files[st.session_state.i]
