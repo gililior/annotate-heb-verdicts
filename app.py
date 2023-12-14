@@ -53,18 +53,19 @@ def generate_colors_map(df):
 
 
 def generate_sidebar_linking(color_map, line_numbers, total):
-    sorted_keys = sorted(color_map.keys())
-    for representative in sorted_keys:
+    for representative in line_numbers:
+        key = st.session_state['id_rep_title'][representative]
+        st.sidebar.markdown(
+            f"<a style='border: 3px solid {color_map[representative]}; padding: 5px; font-size: 16px; color: black;'"
+            f" href='#{key}'>{representative}</a>",
+            unsafe_allow_html=True)
+        add_widgets_for_rep(representative, total)
+    for representative in color_map:
         if representative in line_numbers:
-            key = st.session_state['id_rep_title'][representative]
-            st.sidebar.markdown(
-                f"<a style='border: 3px solid {color_map[representative]}; padding: 5px; font-size: 16px; color: black;'"
-                f" href='#{key}'>{representative}</a>",
-                unsafe_allow_html=True)
-        else:
-            st.sidebar.markdown(
-                f"<a style='border: 3px solid {color_map[representative]}; padding: 5px; font-size: 16px; color: gray;'>{representative}</a>",
-                unsafe_allow_html=True)
+            continue
+        st.sidebar.markdown(
+            f"<a style='border: 3px solid {color_map[representative]}; padding: 5px; font-size: 16px; color: gray;'>{representative}</a>",
+            unsafe_allow_html=True)
         add_widgets_for_rep(representative, total)
 
 
