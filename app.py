@@ -53,7 +53,7 @@ def generate_colors_map(df):
 
 
 def generate_sidebar_linking(color_map, line_numbers, total):
-    sorted_keys = sorted(line_numbers, key=lambda k: line_numbers[k][0])
+    sorted_keys = sorted(color_map.keys())
     for representative in sorted_keys:
         if representative in line_numbers:
             key = st.session_state['id_rep_title'][representative]
