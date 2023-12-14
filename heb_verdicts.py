@@ -19,7 +19,6 @@ def generate_rep_map_to_column():
             continue
         letter = string.ascii_uppercase[i]
         map_to_columns[header] = letter
-    print(map_to_columns)
 
     return map_to_columns
 
@@ -29,7 +28,6 @@ if __name__ == '__main__':
 
     if 'column_map' not in st.session_state:
         representative_map_to_column = generate_rep_map_to_column()
-        print(representative_map_to_column)
         row_ind = 1
         st.session_state.ws.update('A1', "username")
         st.session_state.ws.update('B1', "filename")
