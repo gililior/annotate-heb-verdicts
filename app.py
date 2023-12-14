@@ -215,7 +215,7 @@ def display_single_file(color_map, filtered_df):
         # convert the paragraph to html replacing the \n with <br>
         paragraph = paragraph.replace("\n", "<br>")
 
-        html_text = f"""style='text-align: input {{unicode-bidi:bidi-override; direction: RTL;}} direction: RTL;' <table><tr><th> {i+1} </th><th> {paragraph} </th></tr></table>"""
+        html_text = f"""<style> text-align: input {{unicode-bidi:bidi-override; direction: RTL;}} direction: RTL; </style> <table><tr><th> {i+1} </th><th> {paragraph} </th></tr></table>"""
         st.markdown(html_text, unsafe_allow_html=True)
 
     if is_open[0]:
