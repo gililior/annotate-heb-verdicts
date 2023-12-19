@@ -169,7 +169,7 @@ def main(csv_path):
     court = "mechozi" if selected_file.lower().startswith("m") else "shalom"
     link_prefix = "https://www.nevo.co.il/psika_word/" + court + "/"
     link_to_doc = link_prefix + selected_file.replace(".csv", ".doc")
-    st.write(f"file name:{selected_file.replace('.csv', '')}")
+    st.write(f"file id: {selected_file.replace('.csv', '')}")
     st.write(f"[link]({link_to_doc}) to document in nevo")
 
     # Filter dataframe based on selected file
