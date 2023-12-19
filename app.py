@@ -166,7 +166,7 @@ def main(csv_path):
                 st.session_state.pop(f"{representative}_checkbox")
     selected_file = user_files[st.session_state.i]
 
-    court = "mechozi" if selected_file.startswith("m") else "shalom"
+    court = "mechozi" if selected_file.lower().startswith("m") else "shalom"
     link_prefix = "https://www.nevo.co.il/psika_word/" + court + "/"
     link_to_doc = link_prefix + selected_file.replace(".csv", ".doc")
     st.write(f"file name:{selected_file.replace('.csv', '')}")
