@@ -165,7 +165,6 @@ def main(csv_path):
                 st.session_state.pop(f"{representative}_range")
                 st.session_state.pop(f"{representative}_checkbox")
     selected_file = user_files[st.session_state.i]
-    import streamlit as st
 
     court = "mechozi" if selected_file.startswith("m") else "shalom"
     link_prefix = "https://www.nevo.co.il/psika_word/" + court + "/"
