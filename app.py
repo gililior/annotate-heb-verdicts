@@ -107,7 +107,8 @@ def get_user_files_list(all_files):
         if filename == "filename":
             continue
         file_rows = annotations_df.loc[group_by_filename[filename]]
-        all_files.remove(filename)
+        if filename in all_files:
+            all_files.remove(filename)
         if st.session_state.username in file_rows[0].values:
             continue
         if len(group_by_filename[filename]) == 1:
